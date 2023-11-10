@@ -18,6 +18,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
 import javafx.scene.control.ComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 
 public class MileageCalculatorNoConversion extends Application {
@@ -44,8 +46,9 @@ public class MileageCalculatorNoConversion extends Application {
     private TextField tfDistance = new TextField(defaultEntry);
     private TextField tfCapacity = new TextField(defaultEntry);
     private TextField tfResult = new TextField(defaultCalc);
-	
-    private ComboBox<String> cbMPG = new ComboBox();
+
+    private ObservableList<String> items = FXCollections.observableArrayList(defaultResult,altResult);
+    private ComboBox<String> cbMPG = new ComboBox(items);
 	
     private RadioButton rbMPG = new RadioButton(defaultResult);
     private RadioButton rbKPL = new RadioButton(altResult);
