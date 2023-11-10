@@ -2,9 +2,10 @@
  * File: csci1302/ch16/MileageCalculator.java
  * Package: ch16
  * @author Christopher Williams
+ *Modified by Emmanuel Adeniyi and Drake Cole
  * Created on: Apr 12, 2017
- * Last Modified: Apr 15, 2019
- * Description:  
+ * Last Modified: November 10, 2023
+ * Description:  Replace Radio Buttons with a Combo Box in an existing java class
  */
 package ch16;
 
@@ -49,17 +50,12 @@ public class MileageCalculatorNoConversion extends Application {
 
     private ObservableList<String> items = FXCollections.observableArrayList(defaultResult,altResult);
     private ComboBox<String> cbMPG = new ComboBox(items);
-	
-    private RadioButton rbMPG = new RadioButton(defaultResult);
-    private RadioButton rbKPL = new RadioButton(altResult);
+
     private ToggleGroup tgConv = new ToggleGroup();
     
     private GridPane mainPane = new GridPane();
     
     public void start(Stage primaryStage) {   	
-    	// set toggle group for RadioButtons
-    	rbMPG.setToggleGroup(tgConv);
-    	rbKPL.setToggleGroup(tgConv);
     	
         // set preferences for UI components
         tfDistance.setMaxWidth(txtWidth);
@@ -159,7 +155,6 @@ public class MileageCalculatorNoConversion extends Application {
      */
     private void resetForm() {
         // reset all form fields
-    	rbMPG.setSelected(true);
         tfDistance.setText(defaultEntry);
         tfCapacity.setText(defaultEntry);
         tfResult.setText(defaultCalc);
