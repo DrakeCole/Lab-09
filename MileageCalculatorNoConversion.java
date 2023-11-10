@@ -17,6 +17,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.layout.GridPane;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 public class MileageCalculatorNoConversion extends Application {
@@ -43,7 +44,9 @@ public class MileageCalculatorNoConversion extends Application {
     private TextField tfDistance = new TextField(defaultEntry);
     private TextField tfCapacity = new TextField(defaultEntry);
     private TextField tfResult = new TextField(defaultCalc);
-    
+	
+    private ComboBox<String> cbMPG = new ComboBox();
+	
     private RadioButton rbMPG = new RadioButton(defaultResult);
     private RadioButton rbKPL = new RadioButton(altResult);
     private ToggleGroup tgConv = new ToggleGroup();
@@ -69,8 +72,7 @@ public class MileageCalculatorNoConversion extends Application {
         
         // add items to mainPane
         mainPane.add(lblEffType, 0, 0);
-        mainPane.add(rbMPG, 0, 1);
-        mainPane.add(rbKPL, 1, 1);
+        mainPane.add(cbMPG, 0, 1);
         mainPane.add(lblDistance, 0, 2);
         mainPane.add(tfDistance, 1, 2);
         mainPane.add(lblCapacity, 0, 3);
